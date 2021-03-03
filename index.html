@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Alarm Website</title>
+
+  <!-- Boostrap CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- STYLE CSS -->
+  <link rel="stylesheet" href="resources/css/style.css">
+
+  <!-- Ion Icons CDN -->
+  <link rel="stylesheet" href="vendors/css/ionicons.min.css">
+  <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+
+
+  <!-- Media Query -->
+  <link rel="stylesheet" href="resources/css/media-query.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Ramabhadra&display=swap" rel="stylesheet">
+  <!-- JQUERY SCRIPT CDN -->
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+
+  <!-- POPPER SCRIPT CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+  <!-- BOOTSTRAP SCRIPT CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <div class="header-part">
+
+    </div>
+
+    <div class="row">
+      <div class="container">
+        <div class="alarm-content-wrapper">
+          <div class="current-time">
+
+          </div>
+          <div class="greeting">
+            <i>Use time wisely</i>
+          </div>
+        </div>
+        <div class="pomodoro-content-wrapper">
+          <div class="stage-indicators">
+            <div class="stage-indicators-items">
+              Focus
+            </div>
+            <div class="stage-indicators-items">
+              Rest
+            </div>
+            <div class="stage-indicators-items">
+              Long Rest
+            </div>
+          </div>
+          <div class="pomodoro-content">
+            <div class="time-item" id="focus-time">
+              <h1 class="pomodoro-header-name">Focus Timer</h1>
+              <div class="timer-box" id="focus-countdown-box"></div>
+            </div>
+
+            <div class="time-item" id="short-rest-time">
+              <h1 class="pomodoro-header-name">Rest Timer</h1>
+              <div class="timer-box" id="short-rest-countdown-box"></div>
+            </div>
+
+            <div class="time-item" id="long-rest-time">
+              <h1 class="pomodoro-header-name">Long Rest Timer</h1>
+              <div class="timer-box" id="long-rest-countdown-box"></div>
+            </div>
+          </div>
+        </div>
+
+
+      <div class="button-container">
+        <div class="button-group">
+          <div class="control" id="set_Alarm">
+            Set Alarm
+          </div>
+
+
+          <div class="control" id="set_Pomodoro">
+            Set Pomodoro
+          </div>
+          <div class="control" id="start_Pomodoro">
+            Start Pomodoro
+          </div>
+        </div>
+        <div class="button-group">
+            <div class="control" id="stop_Alarm">
+              Stop Alarm
+            </div>
+
+            <div class="control" id="stop_Pomodoro">
+              Stop Pomodoro
+            </div>
+            <div class="control" id="cancel_PomodoroSettings">
+              Back
+            </div>
+
+
+
+        </div>
+
+        <div class="button-group">
+          <div class="control" id="switch_mode">
+            Pomodoro
+          </div>
+        </div>
+      </div>
+      <div class="pomodoro-menu">
+        <div class="pomodoro-settings-group">
+          <div class="form-group">
+            <label for="Focus-time-select">Focus</label>
+            <select class="form-control pomodoro-form" id="Focus-time-select">
+              <option value="1500000">25 Min</option>
+              <option value="1200000">20 Min</option>
+              <option value="60000">1 Min</option>
+              <option value="30000">30 Sec</option>
+              <option value="5000">5 Sec</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ShortRest-time-select">Short Rest</label>
+            <select class="form-control pomodoro-form" id="ShortRest-time-select">
+              <option value="300000">5 Min</option>
+              <option value="5000">5 Sec</option>
+              <option value="30000">30 Sec</option>
+              <option value="600000">10 Min</option>
+              <option value="60000">1 Min</option>
+
+
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="LongRest-time-select">Long Rest</label>
+            <select class="form-control pomodoro-form" id="LongRest-time-select">
+              <option value="600000">10 Min</option>
+              <option value="900000">15 Min</option>
+              <option value="1200000">20 Min</option>
+              <option value="5000">5 Sec</option>
+            </select>
+
+
+          </div>
+        </div>
+        <div class="pomodoro-settings-group">
+          <div class="form-group">
+            <label for="hour-select">Focus Tone</label>
+            <select class="form-control pomodoro-form" id="Focustime-select" disabled>
+              <option value="">Jungle</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="hour-select">Short Rest Tone</label>
+            <select class="form-control pomodoro-form" id="Focustime-select" disabled>
+              <option value="">Wind</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="hour-select">Long Rest Tone</label>
+            <select class="form-control pomodoro-form" id="Focustime-select" disabled>
+              <option value="">Fire</option>
+            </select>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="current-alarm-box">
+        <h1 class="alarm-list-text"></h1>
+        <div class="alarm-at alarm-list-time">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  </div>
+  <div class="menu-box" id="alarm-menu">
+    <div class="menu-header">
+      <h1 class="menu-header-txt">Edit Alarm</h1>
+      <ion-icon name="close-outline" class="icon"></ion-icon>
+    </div>
+
+    <div class="menu-box-wrapper">
+      <div class="row">
+        <div class="selected-time col-lg-6 col-md-6 col-sm-6">
+          <h1 class="alarm-at-txt">Alarm Time</h1>
+          <div class="alarm-at">
+          </div>
+        </div>
+        <div class="selected-time col-lg-6 col-md-6 col-sm-6">
+          <h1 class="alarm-at-txt">Current Time<span class="morning-noon"></span></h1>
+          <div class="current-time">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+          <div class="col-lg-6 col-md-6 col-sm-6 choice-box">
+            <div class="form-group">
+              <label for="hour-select">Hours</label>
+              <select class="form-control time-select" id="hour-select">
+                <option value="">12 AM</option>
+                <option value="1">1 AM</option>
+                <option value="2">2 AM</option>
+                <option value="3">3 AM</option>
+                <option value="4">4 AM</option>
+                <option value="5">5 AM</option>
+                <option value="6">6 AM</option>
+                <option value="7">7 AM</option>
+                <option value="8">8 AM</option>
+                <option value="9">9 AM</option>
+                <option value="10">10 AM</option>
+                <option value="11">11 AM</option>
+                <option value="12">12 PM</option>
+                <option value="13">1 PM</option>
+                <option value="14">2 PM</option>
+                <option value="15">3 PM</option>
+                <option value="16">4 PM</option>
+                <option value="17">5 PM</option>
+                <option value="18">6 PM</option>
+                <option value="19">7 PM</option>
+                <option value="20">8 PM</option>
+                <option value="21">9 PM</option>
+                <option value="22">10 PM</option>
+                <option value="23">11 PM</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 choice-box">
+            <div class="form-group">
+              <label for="minute-select">Minutes</label>
+              <select class="form-control time-select" id="minute-select">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+                <option>23</option>
+                <option>24</option>
+                <option>25</option>
+                <option>26</option>
+                <option>27</option>
+                <option>28</option>
+                <option>29</option>
+                <option>30</option>
+                <option>31</option>
+                <option>32</option>
+                <option>33</option>
+                <option>34</option>
+                <option>35</option>
+                <option>36</option>
+                <option>37</option>
+                <option>38</option>
+                <option>39</option>
+                <option>40</option>
+                <option>41</option>
+                <option>42</option>
+                <option>43</option>
+                <option>44</option>
+                <option>45</option>
+                <option>46</option>
+                <option>47</option>
+                <option>48</option>
+                <option>49</option>
+                <option>50</option>
+                <option>51</option>
+                <option>52</option>
+                <option>53</option>
+                <option>54</option>
+                <option>55</option>
+                <option>56</option>
+                <option>57</option>
+                <option>58</option>
+                <option>59</option>
+              </select>
+            </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label for="alarm-name">Alarm Name</label>
+            <input type="text" class="form-control alarm-name-input" id="alarm-name" placeholder="Study time, coffee break">
+          </div>
+        </div>
+
+        <div class="col-lg-6 tone-change-box">
+          <div class="form-group">
+            <label for="audio-select">Alarm Tones</label>
+            <select class="form-control" id="audio-select">
+              <option value="1">Beep Alarm</option>
+              <option value="2">Analog Watch</option>
+              <option value="3">Old School Digital</option>
+              <option value="4">Red Alert</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="button-bottom-container">
+        <audio loop id="alarm-tone" src="vendors/mp3/Alarm-ringtone.mp3" type="audio/mp3">
+        </audio>
+        <button class="btn btn-primary btn-small btn-left" id="btn-test"type="button" name="button">Test</button>
+        <button class="btn btn-primary btn-small btn-right" id="btn-start" type="button" name="button">Start</button>
+        <button class="btn btn-primary btn-small btn-right" id="btn-cancel" type="button" name="button">Cancel</button>
+
+      </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="test-box">
+      <div class="menu-header" id="test-box-header">
+          <ion-icon name="close-outline" class="icon"></ion-icon>
+        <h1 class="test-header-txt"> Alarm </h1>
+      </div>
+
+      <div class="test-box-content">
+        <ion-icon name="alarm-outline"></ion-icon>
+        <div class="alarm-info">
+          <div class="alarm-name">
+            Alarm
+          </div>
+          <div class="alarm-at">
+          </div>
+        </div>
+      </div>
+
+
+      <button class="btn btn-danger close-btn"type="button" name="button">Close</button>
+
+
+    </div>
+
+
+
+  <script src="resources/js/scrip3.js"></script>
+</body>
+
+</html>

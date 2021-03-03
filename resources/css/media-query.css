@@ -1,0 +1,95 @@
+/* MEDIA QUERIES */
+
+/*Big tablet: from 1024 to 1200px*/
+@media only screen and (max-width:1200px){
+  .container-fluid{
+    padding: 25% 3%;
+  }
+  .current-time{
+    font-size: 850%;
+    text-align: center;
+  }
+
+  .greeting{
+    padding:0px 0px;
+    height: 150px;
+    margin-bottom: 100px;
+    text-align: center;
+  }
+  .greeting i{font-size: 200%;}
+  .quote-marks{font-size: 100%;}
+  .morning-noon{
+    font-size: 50%;
+  }
+
+  .button-row{
+    margin-top: 150px;
+  }
+
+  .button-container{
+    justify-content: center;
+  }
+
+  .control{
+    width: 200px;
+    height: 60px;
+    font-size: 150%;
+    color:black;
+    background-color: white;
+  }
+
+  .menu-box{
+    top: 30%;
+    left: 12%;
+    width: 800px;
+  }
+
+  .test-box{
+    top: 30%;
+    left: 22%;
+  }
+
+  .alarm-list-text{
+    font-size: 250%;
+  }
+  .alarm-list-time{
+    font-size: 200%;
+  }
+
+  .alarm-list-text,.alarm-list-time{
+    text-align: center;
+  }
+
+  #switch_mode{
+    font-size: 150%;
+  }
+
+}
+
+/*Small tablet to big tablets: from 768 to 1023px*/
+@media only screen and (max-width:1023px){
+  .greeting{margin-bottom:120px;}
+  .greeting i{font-size: 250%;}
+
+}
+
+/*Small phones to small tablets: from 481 to 767px*/
+@media only screen and (max-width:767px){
+
+}
+/* Small Phones: from 0 to 480px*/
+@media only screen and (max-width:480px){
+
+
+}
+
+@media only screen and (max-width:375px){
+  .container-fluid{
+    padding-top: 550px;
+  }
+  .greeting i{font-size: 850%;}
+}
+@media only screen
+    and (device-width : 375px)
+    and (device-height : 812px)
+    and (-webkit-device-pixel-ratio : 3) { }

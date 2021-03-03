@@ -1,0 +1,373 @@
+
+
+/* Basic Setup */
+*{
+  color:#fff;
+  font-size: 20px;
+  text-align: center;
+}
+body{
+  background-image: url("img/green.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+}
+
+/* containers */
+.container-fluid{
+  padding:7% 10%;
+}
+.container{
+  margin-bottom: 30px;
+}
+.pomodoro-content{
+  margin-bottom:50px;
+}
+.pomodoro-content-wrapper{
+  display:none;
+  text-align: left;
+}
+
+#focus-countdown-box{
+}
+
+#short-rest-countdown-box{
+}
+#long-rest-countdown-box{
+}
+
+/* Section */
+.header-part{
+  margin-bottom: 130px;
+}
+/* .header-text{
+
+  color: rgb(0, 161, 45);
+  font-family: 'Ramabhadra', sans-serif;
+} */
+
+.current-time{
+  font-size: 550%;
+  text-align: left;
+}
+
+
+.greeting{
+  height: 120px;
+  text-align: left;
+  line-height: 100px;
+}
+.greeting i{display:none;font-size: 130%;}
+.quote-marks{font-size: 100%;}
+.morning-noon{
+  font-size: 50%;
+}
+
+/* Buttons */
+
+.button-container{
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.control{
+  border-radius: 10px;
+  padding: 5px 20px;
+  border:1px solid white;
+  transition: all .3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+
+}
+
+.button-group:not(:first-child){
+  margin-left: 30px;
+}
+
+
+
+.control:hover{
+  background-color: white;
+  color: black;
+}
+
+#switch_mode{
+  background-color: #8db596;
+  color: #E0FFE7;
+  border: 1px solid #7ca184;
+}
+#switch_mode:hover{
+  background-color: #995960;
+  color: #E6B3B9;
+  border: 1px solid #80484e;
+}
+
+/* POMODORO UI */
+
+.stage-indicators{
+  margin-bottom: 50px;
+  text-align: left;
+}
+.stage-indicators-items{
+  cursor: pointer;
+  display: none;
+  width: 100px;
+  border-radius: 50px;
+}
+.stage-indicators-items:first-child{
+  border: 1px solid white;
+}
+
+.stage-indicators-items:not(:first-child){
+  margin-left: 100px;
+}
+
+.pomodoro-content{
+  text-align: left;
+}
+
+.time-item{
+  display: inline-grid;
+  border: 1px solid white;
+  border-radius: 20%;
+  width: 191.125px;
+  height: 156px;
+}
+.time-item:not(:first-child){
+  margin-left: 120px;
+
+}
+.pomodoro-header-name{
+  margin: 0;
+  font-size: 110%;
+}
+.timer-box{
+  font-size: 350%;
+  transition: all 1s ease;
+}
+
+/* //Pomodoro UI BUTTONS */
+#start_Pomodoro{
+  background-color: #583d72;
+}
+#start_Pomodoro:hover{
+  color: #E2E83A;
+}
+
+/* Pomodoro Menu */
+
+
+.pomodoro-menu{
+  display:none;
+}
+.pomodoro-menu label{
+  color:white;
+}
+.pomodoro-form{
+  width: 70%;
+}
+.pomodoro-settings-group{
+  width: 60%;
+  display: flex;
+}
+/* //Info Pop UP */
+
+
+/* control popup */
+
+.menu-box{
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 20%;
+  left: 54%;
+}
+
+.menu-header{
+  background-color: rgb(91, 140, 0);
+  padding:9px 15px;
+  text-align: left;
+}
+.menu-header-txt{
+  margin: 0;
+  font-size: 130%;
+  display: inline-grid;
+  color:white;
+}
+.icon{
+  color:white;
+  font-size: 130%;
+  padding-top: 7px;
+  float: right;
+  cursor: pointer;
+}
+.menu-box-wrapper{
+  padding:20px 25px 20px;
+}
+.menu-box-wrapper .row .col-lg-6{
+  color:black;
+}
+
+.form-group,.alarm-at,.selected-time,label,select,option{
+  color:black;
+}
+
+.form-group{
+  text-align: left !important;
+}
+
+.form-group{
+  width: 180px;
+}
+
+.selected-time{
+  padding-bottom: 10px;
+}
+
+.alarm-at-txt,.alarm-at{
+  text-align: left;
+}
+
+.alarm-at-txt{
+  color: red;
+  font-size: 90%;
+}
+.alarm-at{
+  font-size: 150%;
+}
+
+.selected-time .current-time{
+  font-size: 150%;
+  text-align:left;
+  color: black;
+}
+.selected-time .current-time .morning-noon{
+  font-size: 50%;
+  text-align:left;
+  color: black;
+}
+
+.alarm-name-input{
+  text-align: left;
+}
+
+
+
+/* buttons at the buttom */
+
+.button-bottom-container::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.button-bottom-container .btn{
+  background-color: rgb(91, 140, 0);
+  border:none;
+}
+.btn-left{
+  float: left;
+}
+
+.btn-right{
+  float: right;
+}
+
+
+
+
+#btn-start{
+  margin-left: 20px;
+}
+
+
+/* Test Window Pop up */
+
+.test-box{
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 20%;
+  left: 34%;
+  width: 600px;
+  padding-bottom: 20px;
+}
+
+#test-box-header{
+  background-color: rgb(255, 119, 119);
+  padding:9px 15px;
+}
+
+.test-header-txt{
+  margin: 0;
+  font-size: 130%;
+  display: inline-grid;
+  color:white;
+}
+
+.test-box-content{
+
+
+}
+.test-box-content ion-icon{
+  font-size: 500%;
+  color: black;
+}
+
+.alarm-name, .alarm-info.alarm-at{
+  color: black;
+}
+
+.alarm-info .alarm-at{
+  text-align: center;
+}
+
+.close-btn{
+  background-color: rgb(255, 119, 119);
+}
+
+
+/* Current Alarm Display */
+
+.current-alarm-box{
+  display: none;
+  color:white;
+}
+
+
+.alarm-list-text{
+  font-size: 200%;
+  text-align: left;
+}
+
+.alarm-list-time{
+  font-size: 150%;
+  color: white;
+}
+
+
+
+/* Alarm Activated Popup */
+
+.alarm-box{
+  display: none;
+  position: absolute;
+  background-color: white;
+  top: 20%;
+  left: 34%;
+  width: 600px;
+  padding-bottom: 20px;
+}
+
+#alarm-box-header{
+  background-color: red;
+}
+
+.alarm-close-btn{
+  background-color: rgb(255, 119, 119);
+  margin: 0;
+}
+
+
+/* Mode Switch */
